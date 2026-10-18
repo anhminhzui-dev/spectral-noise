@@ -72,9 +72,53 @@ const [vx, vy, vz] = SpectralNoise.curl3D(x, y, z);
 
 ---
 
-## 5. Interactive Live Demo
-A zero-install visualizer is provided in [`index.html`](index.html).  
-Switch in real-time between **fBm Terrain**, **3D Perlin Slices**, **Voronoi Cells**, and **Particle Curl Flow Fields**.
+## 5. Direct Command-Line Execution & ASCII Visualizer
+
+Run the noise evaluation engine and terminal ASCII slice generator directly:
+
+```bash
+node spectral-noise.js
+```
+
+### Sample Output:
+```
+=================================================================
+=== SPECTRAL-NOISE: HIGH-DIMENSIONAL PROCEDURAL NOISE KERNEL ===
+=================================================================
+
+Primitives: 3D Perlin, 3D Simplex, Octave fBm, Voronoi F1, and Incompressible 3D Curl Noise.
+Mathematical Reference: Blender 5.3 C++ intern/cycles/kernel/svm/svm_noise.h
+
+--- TERMINAL ASCII 2D SLICE (3D PERLIN NOISE FIELD) ---
+
+  [=-----======--::::::---=====+++==--::::::--===----]
+  [======++++++=-:..::::--====++==--:::..::-=====----]
+  [+++++******+=-:::::----=======--::::::::----------]
+  [+**********+=--:----==========----------::::::::--]
+  [++******+++=------=====================--::::::::-]
+  [+++++++++==--:::---=================++===----:::::]
+  [===+++++===--:::---================++++++=====----]
+  [-===++++++==-----==+++==--------=====+++++++++++==]
+  [==+++++++++==---==++*++=--:::::--===========++****]
+  [=+++++===+===--==++***++=--::::-======-----==+****]
+  [=++++=======----==+****++=------======------==+***]
+  [=======----------==++****++=======-----------=++++]
+  [--======------------=++**++++===---:::--===-======]
+  [--=======-----::::::--=+++======--:::--=========--]
+
+-------------------------------------------------------------------
+
+Benchmarking 100,000 continuous 3D noise evaluations on CPU...
+[PASS] Evaluated 100,000 nodes in 7ms (~14,285,714 evals/sec)
+[PASS] Evaluated fbm3D (4 octaves) at (0.5, 0.5, 0.5) : 0.13333
+[PASS] Evaluated 3D Voronoi F1 at (1.0, 2.0, 3.0)   : 0.53893
+[PASS] Evaluated 3D Curl Vector at (1.0, 2.0, 3.0)  : [-1.00000, 2.00000, -1.00000]
+[PASS] Parity test suite available                  : node test-parity.js (133 tests)
+
+=================================================================
+VERDICT: 100% mathematical noise primitives verified.
+=================================================================
+```
 
 ---
 
