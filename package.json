@@ -1,0 +1,25 @@
+{
+  "name": "spectral-noise",
+  "version": "1.0.0",
+  "description": "Zero-dependency high-dimensional procedural noise kernels with Blender C++ parity",
+  "type": "module",
+  "main": "spectral-noise.js",
+  "scripts": {
+    "start": "node spectral-noise.js",
+    "test": "node test-parity.js"
+  },
+  "keywords": [
+    "procedural-noise",
+    "perlin-noise",
+    "simplex-noise",
+    "curl-noise",
+    "blender-parity",
+    "zero-dependencies"
+  ],
+  "author": "Vo Ba Hoang Minh <minhhoang250803@gmail.com> (https://github.com/anhminhzui-dev)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhminhzui-dev/spectral-noise.git"
+  }
+}
